@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Day___5_DynamicAppIcon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUL-4B-NaB">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="barTintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Select App Icon" id="tCt-73-rXO"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3u-62-XJc">
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tCr-b5-xet"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Reset App Icon"/>
+                                <connections>
+                                    <action selector="resetAppIconTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ris-dW-yQH"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kaj-Cf-6ME">
+                                <rect key="frame" x="102" y="131" width="170" height="550"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTQ-Ue-u0y">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                        <state key="normal" backgroundImage="AppIconAlternate1.png"/>
+                                        <connections>
+                                            <action selector="appIcon1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyF-AE-H9Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-pJ-fRz">
+                                        <rect key="frame" x="0.0" y="190" width="170" height="170"/>
+                                        <state key="normal" image="AppIconAlternate2.png"/>
+                                        <connections>
+                                            <action selector="appIcon2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNo-ne-qtb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwz-oU-Qpc">
+                                        <rect key="frame" x="0.0" y="380" width="170" height="170"/>
+                                        <state key="normal" backgroundImage="AppIconAlternate3.png"/>
+                                        <connections>
+                                            <action selector="appIcon3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0VX-b9-mFH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J3u-62-XJc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="29g-Wl-acG"/>
+                            <constraint firstItem="kaj-Cf-6ME" firstAttribute="top" secondItem="JUL-4B-NaB" secondAttribute="bottom" constant="43" id="6qI-2i-yQd"/>
+                            <constraint firstItem="JUL-4B-NaB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kq9-xM-8rL"/>
+                            <constraint firstItem="J3u-62-XJc" firstAttribute="top" secondItem="kaj-Cf-6ME" secondAttribute="bottom" constant="47" id="USb-Dp-DI9"/>
+                            <constraint firstItem="kaj-Cf-6ME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g76-wA-nsB"/>
+                            <constraint firstItem="JUL-4B-NaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hqY-KM-pmg"/>
+                            <constraint firstItem="JUL-4B-NaB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lxq-Wx-WOm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J3u-62-XJc" secondAttribute="trailing" constant="16" id="tGg-RM-eH7"/>
+                            <constraint firstItem="J3u-62-XJc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uev-Rm-f94"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.74384236453201"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIconAlternate1.png" width="170" height="170"/>
+        <image name="AppIconAlternate2.png" width="170" height="170"/>
+        <image name="AppIconAlternate3.png" width="170" height="170"/>
+    </resources>
 </document>
